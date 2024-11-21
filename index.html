@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Šnabždukas</title>
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
         body {
             display: flex;
             justify-content: center;
@@ -25,11 +30,11 @@
         }
         .container {
             width: 90%;
-            max-width: 480px; 
+            max-width: 480px;
         }
         .rick-roll {
-            width: 100%; 
-            height: auto; 
+            width: 100%;
+            height: auto;
         }
         .corner-text {
             position: fixed;
@@ -39,6 +44,13 @@
             color: #888;
         }
     </style>
+    <script>
+        function adjustViewportHeight() {
+            document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+        }
+        window.addEventListener('resize', adjustViewportHeight);
+        window.addEventListener('load', adjustViewportHeight);
+    </script>
 </head>
 <body>
     <div class="container">
